@@ -1,0 +1,289 @@
+:root {
+    --primary-action: #171CE6; /* Aplicación: Acción principal, botones destacados */
+    --secondary-hover: #4D6AE6; /* Aplicación: Hover, enlaces secundarios */
+    --soft-background: #C9D4FF; /* Aplicación: Fondos suaves, tarjetas secundarias */
+    --base-background: #F4F4F6; /* Aplicación: Fondo base, contenedores de contenido */
+    --high-contrast-text: #1E1E2F; /* Aplicación: Tipografía y acentos de alto contraste */
+    --marketing-accent: #FFD761; /* Aplicación: Avisos, íconos activos, marketing */
+}
+
+.navbar-logo {
+    height: 60px !important; 
+    width: auto !important; 
+}
+
+.gordos-house-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    font-size: 1.8rem; /* Adjust as needed */
+    color: var(--high-contrast-text); /* Or a specific color for the text */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--base-background);
+    color: var(--high-contrast-text);
+}
+
+h1, h2 {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+blockquote {
+    font-family: 'Libre Baskerville', serif;
+}
+
+a, button {
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.3s ease; /* Smooth transitions for all changes */
+}
+
+a:hover {
+    color: var(--secondary-hover) !important; /* Make links more noticeable on hover */
+    transform: translateY(-3px); /* Increased lift effect */
+    border-bottom: 2px solid var(--secondary-hover); /* Add a subtle underline */
+    padding-bottom: 2px; /* Space between text and underline */
+}
+
+.btn {
+    /* General button styles, assuming Bootstrap's .btn class is used */
+    border-radius: 0.5rem; /* Slightly rounded corners for a modern look */
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: var(--primary-action);
+    border-color: var(--primary-action);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.btn-info {
+    background-color: var(--marketing-accent);
+    border-color: var(--marketing-accent);
+    color: var(--high-contrast-text);
+}
+
+.btn-info:hover {
+    background-color: darken(var(--marketing-accent), 10%); /* Darken for hover, if SASS/LESS is used, otherwise pick a darker hex */
+    border-color: darken(var(--marketing-accent), 10%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add more specific button styles as needed, e.g., .btn-success, .btn-warning, .btn-danger */
+
+.navbar {
+    backdrop-filter: blur(5px); /* Efecto de cristal esmerilado */
+    -webkit-backdrop-filter: blur(5px); /* Para compatibilidad con Safari */
+}
+
+.body-padded {
+    padding-top: 70px; /* Ajusta esto según la altura real de tu navbar */
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15); /* Negro con 15% de opacidad */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    text-align: left; /* Asegura que el texto dentro también se alinee a la izquierda */
+    padding-left: 15px; /* Espacio desde el borde izquierdo */
+    padding-right: 15px; /* Espacio desde el borde derecho */
+}
+
+.banner-overlay .container {
+    width: 100%; /* Asegura que el contenedor dentro del overlay ocupe todo el ancho */
+    max-width: 960px; /* O el max-width de tu contenedor principal */
+}
+
+code, pre {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--primary-action-rgb), 0.7); /* Using RGB for transparency */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Define RGB values for primary-action for use in rgba */
+:root {
+    --primary-action-rgb: 23, 28, 230; /* RGB for #171CE6 */
+}
+
+.guest-layout-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--base-background);
+}
+
+.guest-form-card {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 24px;
+    padding: 24px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--high-contrast-text);
+    margin-bottom: 8px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--high-contrast-text);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: var(--primary-action);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-action-rgb), 0.25);
+}
+
+.text-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 8px;
+    display: block;
+}
+
+.form-group-checkbox {
+    margin-top: 16px;
+}
+
+.form-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.form-checkbox {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    color: var(--primary-action);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin-right: 8px;
+}
+
+.form-checkbox:focus {
+    border-color: var(--primary-action);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-action-rgb), 0.25);
+}
+
+.form-checkbox-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.text-link {
+    text-decoration: underline;
+    font-size: 0.875rem;
+    color: #6c757d;
+    transition: color 0.15s ease-in-out;
+}
+
+.text-link:hover {
+    color: var(--primary-action);
+}
+
+.session-status {
+    font-size: 0.875rem;
+    color: #28a745;
+    margin-bottom: 16px;
+}

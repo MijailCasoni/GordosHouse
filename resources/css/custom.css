@@ -1,0 +1,164 @@
+/* Estilos personalizados */
+
+    :root {
+            --color-light-bg: #F8F8F8;
+            --color-dark-bg: #2C2C2C;
+            --color-accent-1: #A08A7D;
+            --color-accent-2: #6B8E8E;
+            --color-text-dark: #333333;
+            --color-text-light: #E0E0E0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-light-bg);
+            color: var(--color-text-dark);
+        }
+        .navbar {
+            background-color: rgba(100, 221, 239, 0.35) !important;
+            padding: 1rem 0;
+        }
+
+        .navbar-logo {
+            height: auto !important;
+            width: 60px !important;
+            margin-right: 10px;
+        }
+        
+        .navbar-brand, .navbar-nav .nav-link {
+            color: var(--color-text-light) !important;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--color-accent-1) !important;
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        header {
+            background-color: var(--color-dark-bg) !important;
+            color: var(--color-text-light);
+            padding: 8rem 0 !important; /* Más espacio para un look lounge */
+        }
+        header .container {
+            background-color: rgba(0, 0, 0, 0.4) !important; /* Oscurecer un poco el overlay */
+            padding: 3rem !important;
+            border-radius: 10px;
+        }
+        main .container {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        section {
+            padding: 3rem 0;
+            margin-bottom: 0 !important; /* Eliminar mb-5 para controlar el espaciado con padding */
+            position: relative; /* Para el overlay */
+            overflow: hidden; /* Para asegurar que la imagen de fondo no se desborde */
+        }
+        section:nth-of-type(even) {
+            background-color: var(--color-light-bg);
+            color: var(--color-text-dark);
+        }
+        section:nth-of-type(odd) {
+            background-color: var(--color-dark-bg);
+            color: var(--color-text-light);
+        }
+        section h2, section h3 {
+            color: var(--color-accent-1);
+            margin-bottom: 2rem;
+        }
+
+        .lead{
+            color: var(--color-text-dark);
+
+        }
+        section:nth-of-type(odd) h2, section:nth-of-type(odd) h3 {
+            color: var(--color-accent-2);
+        }
+        .section-bg-image {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto parallax */
+            color: var(--color-text-light); /* Texto claro sobre imagen oscura */
+        }
+        .section-bg-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 44, 44, 0.6); /* Usar el color dark-bg con opacidad */
+            z-index: 1;
+        }
+        .section-bg-image > .container {
+            position: relative;
+            z-index: 2; /* Asegurar que el contenido esté sobre el overlay */
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--color-light-bg); /* Asegurar que las tarjetas usen el color claro */
+            color: var(--color-text-dark);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .btn-primary {
+            background-color: var(--color-accent-1);
+            border-color: var(--color-accent-1);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent-2);
+            border-color: var(--color-accent-2);
+        }
+        .star-rating span {
+            font-size: 1.2rem;
+        }
+        footer {
+            background-color: var(--color-dark-bg) !important;
+            color: var(--color-text-light);
+            padding: 2rem 0;
+        }
+        footer a {
+            color: var(--color-text-light);
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: var(--color-accent-1);
+        }
+        .map-container {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 5rem 0 !important;
+            }
+            header .container {
+                padding: 2rem !important;
+            }
+            main .container {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            section {
+                padding: 2rem 0;
+            }
+            .map-container {
+                height: 300px;
+            }
+        }

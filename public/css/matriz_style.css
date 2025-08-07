@@ -1,0 +1,232 @@
+/* ============================
+   PLANTILLA CSS MODERNA
+   Estilo: Business Lounge / Minimal Tech
+   ============================ */
+
+:root {
+    --color-light-bg: #F8F8F8;
+    --color-dark-bg: #2C2C2C;
+    --color-accent-1: #296F6B;
+    --color-accent-2: #6B8E8E;
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+    --color-bg-button: #29506F;
+    --color-bg-nv: rgba(100, 221, 239, 0.3);
+
+    --font-family-brand: 'Montserrat', sans-serif;
+    --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--color-light-bg);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-bg-nv);
+    padding: 1rem 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.navbar-brand, .navbar-nav {
+    font-family: var(--font-family-brand);
+    font-weight: bold;
+    color: var(--color-text-dark);
+    text-decoration: none;
+}
+
+.nav-link {
+    font-family: var(--font-family-brand);
+    font-weight: 300;
+    color: var(--color-text-dark);
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--color-accent-1);
+}
+
+/* Header */
+header {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+header .container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+/* Main */
+main .container {
+    padding: 5rem 2rem;
+}
+
+/* Secciones */
+section {
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--color-light-bg);
+    color: var(--color-text-dark);
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+}
+
+section h2, section h3 {
+    font-family: var(--font-family-brand);
+    margin-bottom: 2rem;
+}
+
+section:nth-of-type(even) h2, section:nth-of-type(even) h3 {
+    color: var(--color-accent-1);
+}
+
+section:nth-of-type(odd) h2, section:nth-of-type(odd) h3 {
+    color: var(--color-accent-2);
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--color-bg-button);
+    color: var(--color-text-light);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-family-brand);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-2);
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-light-bg);
+    color: var(--color-text-dark);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    padding: 2rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--color-accent-1);
+}
+
+/* Mapa */
+.map-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 5rem 1rem;
+    }
+    header .container {
+        padding: 2rem;
+    }
+    main .container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    section {
+        padding: 2rem 1rem;
+    }
+    .map-container {
+        height: 300px;
+    }
+}
+
+/* === Estilos existentes ... === */
+
+/* === Sección "Nosotros" - Estilo elegante === */
+.section-style-light {
+    background-color: #FAF9F6;
+    padding: 6rem 0;
+}
+
+.section-style-light h2 {
+    color: #333333;
+}
+
+.about-card-light {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.about-card-light:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.about-card-light h3 {
+    color: #4B3F36;
+}
+
+.about-card-light p {
+    color: #5F5F5F;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
