@@ -1,0 +1,13 @@
+[
+  {
+    "name": "gordosho",
+    "host": "ftp.gordoshouse.cl",
+    "port": 21,
+    "type": "ftp",
+    "username": "public@gordoshouse.cl",
+    "password": "ClaudioGordosho",
+    "path": "/gordoshouse.cl/public",
+    "autosave": true,
+    "confirm": true
+  }
+]
